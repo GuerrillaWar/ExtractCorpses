@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>6276fc30-7ea1-4e1a-8451-77531345dfs34</Guid>
+    <Name>ExtractCorpses</Name>
+    <Description>Very compatible version of corpse carrying that patches animations into the archetype rather than overwriting. Part of Guerrilla War</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>CarryCorpses</AssemblyName>
+    <RootNamespace>CarryCorpses</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config" />
+    <Folder Include="Content" />
+    <Folder Include="Localization" />
+    <Folder Include="Src" />
+    <Folder Include="Src\ExtractCorpses" />
+    <Folder Include="Src\ExtractCorpses\Classes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComEditor.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEngine.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComExtractCorpses.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGame.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\XComGame.int">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Ability_DeployFultonHarness.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Action_FultonExtraction.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Condition_IsFultonable.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_EnableCarrying.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Item_FultonHarness.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_TacticalCleanup.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\X2DownloadableContentInfo_ExtractCorpses.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
