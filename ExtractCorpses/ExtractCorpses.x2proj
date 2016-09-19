@@ -32,6 +32,9 @@
     <Content Include="Localization\XComGame.int">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModPreview.jpg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Ability_DeployFultonHarness.uc">
       <SubType>Content</SubType>
     </Content>
