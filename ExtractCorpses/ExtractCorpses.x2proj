@@ -2,11 +2,12 @@
 <Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Guid>6276fc30-7ea1-4e1a-8451-77531345dfs34</Guid>
-    <Name>ExtractCorpses</Name>
+    <Name>Extract Corpses</Name>
     <Description>Very compatible version of corpse carrying that patches animations into the archetype rather than overwriting. Part of Guerrilla War</Description>
     <SteamPublishID>0</SteamPublishID>
     <AssemblyName>CarryCorpses</AssemblyName>
     <RootNamespace>CarryCorpses</RootNamespace>
+    <ProjectGuid>{3ab48132-31b9-47b7-ba9e-44ab4fb0b78d}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Config" />
