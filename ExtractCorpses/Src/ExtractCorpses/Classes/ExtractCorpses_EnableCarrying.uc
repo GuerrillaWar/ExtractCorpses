@@ -42,4 +42,7 @@ static function UpdateCharacterForCarrying(X2CharacterTemplate Template)
 	}
 }
 
-defaultproperties {  ScreenClass = class'UIMessageMgr'; }  
+defaultproperties
+{
+	ScreenClass = class'UIMessageMgr';
+}  
