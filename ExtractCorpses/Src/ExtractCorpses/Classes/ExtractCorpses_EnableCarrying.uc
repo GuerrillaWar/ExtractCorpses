@@ -3,6 +3,7 @@ class ExtractCorpses_EnableCarrying extends UIScreenListener
 	config(ExtractCorpses);
 
 var const config array<name> CarryableCharacterTemplates;
+var const config array<name> CarryableCharacterGroups;
 
 event OnInit(UIScreen Screen)
 {
@@ -12,14 +13,28 @@ event OnInit(UIScreen Screen)
 static function UpdateCharacterArchetypes()
 {
 	local X2CharacterTemplateManager Manager;
-	local name CharTemplate;
+	local name CharTemplateName;
+	local X2DataTemplate IterTemplate;
+	local X2CharacterTemplate CharTemplate;
 
 	Manager = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
 
 	`log("ExtractCorpses :: Updating Character Templates for Carrying");
-	foreach default.CarryableCharacterTemplates(CharTemplate) {
-		`log("  - " @ CharTemplate);
-		UpdateCharacterForCarrying(Manager.FindCharacterTemplate(CharTemplate));
+	foreach default.CarryableCharacterTemplates(CharTemplateName) {
+		`log("  - " @ CharTemplateName);
+		UpdateCharacterForCarrying(Manager.FindCharacterTemplate(CharTemplateName));
+	}
+
+	foreach Manager.IterateTemplates(IterTemplate, none)
+	{
+		CharTemplate = X2CharacterTemplate(IterTemplate);
+
+		if (default.CarryableCharacterGroups.Find(CharTemplate.CharacterGroupName) != -1 &&
+			default.CarryableCharacterTemplates.Find(CharTemplate.DataName) == -1)
+		{
+			`log("  - " @ CharTemplate.DataName @ " from " @ CharTemplate.CharacterGroupName);
+			UpdateCharacterForCarrying(CharTemplate);
+		}
 	}
 }
 
