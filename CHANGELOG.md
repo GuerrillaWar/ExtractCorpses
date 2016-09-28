@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased Changes
+## 0.1.1 - 2016-09-18
+### Added
+- Range Indicator for fulton-extractable units
+- new Fulton ability icon
+
 
 ## 0.1.0 - 2016-08-31
 ### Added

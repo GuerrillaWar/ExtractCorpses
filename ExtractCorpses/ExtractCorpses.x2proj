@@ -30,6 +30,9 @@
     <Content Include="Config\XComGame.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Content\ExtractCorpses_Assets.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Localization\XComGame.int">
       <SubType>Content</SubType>
     </Content>
@@ -42,6 +45,9 @@
     <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Action_FultonExtraction.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Actor_FultonRadius.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_Condition_IsFultonable.uc">
       <SubType>Content</SubType>
     </Content>
@@ -52,6 +58,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_TacticalCleanup.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtractCorpses\Classes\ExtractCorpses_X2AbilityPassiveAOE_ShowFultonRadii.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\ExtractCorpses\Classes\X2DownloadableContentInfo_ExtractCorpses.uc">

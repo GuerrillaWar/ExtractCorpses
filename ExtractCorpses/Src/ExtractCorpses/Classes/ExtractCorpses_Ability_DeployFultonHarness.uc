@@ -2,7 +2,7 @@
 class ExtractCorpses_Ability_DeployFultonHarness extends X2Ability
 	config(ExtractCorpses);
 
-
+var float FULTON_EXTRACT_RANGE;
 
 static function array<X2DataTemplate> CreateTemplates()
 {
@@ -24,6 +24,8 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	local X2AbilityCharges              Charges;
 	local X2AbilityCost_Charges         ChargeCost;
 
+	local ExtractCorpses_X2AbilityPassiveAOE_ShowFultonRadii	PassiveAOEStyle;
+
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'DeployFultonHarness');
 
 	Charges = new class'X2AbilityCharges';
@@ -43,6 +45,9 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	SingleTarget = new class'X2AbilityTarget_Single';
 	Template.AbilityTargetStyle = SingleTarget;
 
+	PassiveAOEStyle = new class'ExtractCorpses_X2AbilityPassiveAOE_ShowFultonRadii';
+	Template.AbilityPassiveAOEStyle = PassiveAOEStyle;
+
 	ShooterCondition = new class'X2Condition_UnitProperty';
 	ShooterCondition.ExcludeDead = true;
 	Template.AbilityShooterConditions.AddItem(ShooterCondition);
@@ -55,7 +60,7 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	TargetCondition.ExcludeFriendlyToSource = false;
 	TargetCondition.ExcludeHostileToSource = false;     
 	TargetCondition.RequireWithinRange = true;
-	TargetCondition.WithinRange = 288;
+	TargetCondition.WithinRange = default.FULTON_EXTRACT_RANGE;
 	Template.AbilityTargetConditions.AddItem(TargetCondition);
 
 	FultonableCondition = new class'ExtractCorpses_Condition_IsFultonable';            
@@ -64,7 +69,7 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	InputTrigger = new class'X2AbilityTrigger_PlayerInput';
 	Template.AbilityTriggers.AddItem(InputTrigger);
 
-	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_stabilize";
+	Template.IconImage = "img:///ExtractCorpses_Assets.UIPerk_FultonExtract";
 	Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.STABILIZE_PRIORITY;
 	Template.Hostility = eHostility_Defensive;
 	Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
@@ -175,4 +180,9 @@ simulated function DeployFultonHarness_BuildVisualization(XComGameState Visualiz
 		OutVisualizationTracks.AddItem(BuildTrack);
 	}
 	//****************************************************************************************
+}
+
+defaultproperties
+{
+	FULTON_EXTRACT_RANGE=288;
 }
