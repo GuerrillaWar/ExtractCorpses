@@ -2,7 +2,8 @@
 class ExtractCorpses_Ability_DeployFultonHarness extends X2Ability
 	config(ExtractCorpses);
 
-var float FULTON_EXTRACT_RANGE;
+var const config float FultonExtractRange;
+var const config int FultonActionCost;
 
 static function array<X2DataTemplate> CreateTemplates()
 {
@@ -37,7 +38,7 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	Template.AbilityCosts.AddItem(ChargeCost);
 
 	ActionPointCost = new class'X2AbilityCost_ActionPoints';
-	ActionPointCost.iNumPoints = 1;
+	ActionPointCost.iNumPoints = default.FultonActionCost;
 	Template.AbilityCosts.AddItem(ActionPointCost);
 	
 	Template.AbilityToHitCalc = default.DeadEye;
@@ -60,7 +61,7 @@ static function X2AbilityTemplate CreateDeployFultonHarness()
 	TargetCondition.ExcludeFriendlyToSource = false;
 	TargetCondition.ExcludeHostileToSource = false;     
 	TargetCondition.RequireWithinRange = true;
-	TargetCondition.WithinRange = default.FULTON_EXTRACT_RANGE;
+	TargetCondition.WithinRange = default.FultonExtractRange;
 	Template.AbilityTargetConditions.AddItem(TargetCondition);
 
 	FultonableCondition = new class'ExtractCorpses_Condition_IsFultonable';            
@@ -180,9 +181,4 @@ simulated function DeployFultonHarness_BuildVisualization(XComGameState Visualiz
 		OutVisualizationTracks.AddItem(BuildTrack);
 	}
 	//****************************************************************************************
-}
-
-defaultproperties
-{
-	FULTON_EXTRACT_RANGE=288;
 }

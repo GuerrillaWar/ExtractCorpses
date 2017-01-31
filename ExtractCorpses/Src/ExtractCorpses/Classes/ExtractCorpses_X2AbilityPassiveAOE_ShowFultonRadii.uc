@@ -68,7 +68,7 @@ function DrawAOETiles(const XComGameState_Ability Ability, const vector Location
 	Cond = default.MeleeVisibilityCondition;
 	Conds.AddItem(Cond);
 
-	FultonWorldRadius = class'ExtractCorpses_Ability_DeployFultonHarness'.default.FULTON_EXTRACT_RANGE;
+	FultonWorldRadius = class'ExtractCorpses_Ability_DeployFultonHarness'.default.FultonExtractRange;
 
 	foreach History.IterateByClassType(class'XComGameState_Unit', Unit)
 	{

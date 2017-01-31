@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.2.0 - 2017-01-31
+### Added
+- Configuration for Fulton Action Point Cost and Range
+- Added AdventDrone to CarryableCharacterGroups
+
 ## 0.1.1 - 2016-09-18
 ### Added
 - Range Indicator for fulton-extractable units
